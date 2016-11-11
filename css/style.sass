@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700')
+
+body 
+	margin: 0px
+	display: flex
+	align-items: center
+	justify-content: center
+	min-height: 100vh
+	font-family: 'Open Sans', sans-serif
+	background: url(../images/carrots.jpg)
+	background-size: cover
+	background-position: center
+
+	.wrapper 
+		border-radius: 5px
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		max-width: 90vw
+		max-height: 90vh
+		padding: 20px
+		box-shadow: 0px 0px 61px 0px rgba(0, 0, 0, 0.5)
+		background: white
+
+		img 
+			width: 35vh
+		
+		.text 
+			text-align: center
+			font-size: 1em
+	
+		.cta-wrapper
+			width: 50%
+			display: flex
+			align-items: center
+			justify-content: center
+			flex-direction: column
+			min-width: 126px
+
+			.cta 
+				display: flex
+				align-items: center
+				justify-content: space-around
+				width: 100%
+
+				button
+					border: none
+					border-radius: 3px
+					font-family: "Open Sans"
+					font-size: .95em
+					letter-spacing: .3
+					padding: 8px 12px
+					cursor: pointer
+					display: flex
+					align-items: center
+					justify-content: center
+
+					i
+						font-size: 0em
+						margin-left: 0px
+						transform: scale(0)
+						transition: all .3s ease-in-out .2s
+
+						&.show
+							transform: scale(1)
+							margin-left: 5px
+							display: block
+							font-size: .8em
+
+				.login 
+					border: 1px solid #909090
+					border-radius: 3px
+					padding: 7px 12px
+					color: #5d5d5d
+					transition: all .3s ease-in-out
+					background: white
+					flex-grow: 1
+
+					&:hover 
+						background: #efefef
+
+				.register 
+					margin-left: 6px
+					background: #e71425
+					color: white
+					transition: all .3s ease-in-out
+					flex-grow: 2
+
+					&:hover 
+						background: #de1323
+
+			[class^="input"] 
+				height: 0
+				margin-top: 0px
+				border-radius: 2px
+				border: 0px solid #909090
+				padding: 0px 5px
+				transition: all .3s ease-in-out
+				width: 100%
+
+
+				&.show 
+					height: inherit
+					margin-top: 10px
+					border: 1px solid #909090
+					padding: 5px

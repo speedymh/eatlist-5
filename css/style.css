@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+body {
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  background: url(../images/carrots.jpg);
+  background-size: cover;
+  background-position: center; }
+  body .wrapper {
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: 20px;
+    box-shadow: 0px 0px 61px 0px rgba(0, 0, 0, 0.5);
+    background: white; }
+    body .wrapper img {
+      width: 35vh; }
+    body .wrapper .text {
+      text-align: center;
+      font-size: 1em; }
+    body .wrapper .cta-wrapper {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-width: 126px; }
+      body .wrapper .cta-wrapper .cta {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%; }
+        body .wrapper .cta-wrapper .cta button {
+          border: none;
+          border-radius: 3px;
+          font-family: "Open Sans";
+          font-size: 0.95em;
+          letter-spacing: 0.3;
+          padding: 8px 12px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          body .wrapper .cta-wrapper .cta button i {
+            font-size: 0em;
+            margin-left: 0px;
+            transform: scale(0);
+            transition: all 0.3s ease-in-out 0.2s; }
+            body .wrapper .cta-wrapper .cta button i.show {
+              transform: scale(1);
+              margin-left: 5px;
+              display: block;
+              font-size: 0.8em; }
+        body .wrapper .cta-wrapper .cta .login {
+          border: 1px solid #909090;
+          border-radius: 3px;
+          padding: 7px 12px;
+          color: #5d5d5d;
+          transition: all 0.3s ease-in-out;
+          background: white;
+          flex-grow: 1; }
+          body .wrapper .cta-wrapper .cta .login:hover {
+            background: #efefef; }
+        body .wrapper .cta-wrapper .cta .register {
+          margin-left: 6px;
+          background: #e71425;
+          color: white;
+          transition: all 0.3s ease-in-out;
+          flex-grow: 2; }
+          body .wrapper .cta-wrapper .cta .register:hover {
+            background: #de1323; }
+      body .wrapper .cta-wrapper [class^="input"] {
+        height: 0;
+        margin-top: 0px;
+        border-radius: 2px;
+        border: 0px solid #909090;
+        padding: 0px 5px;
+        transition: all 0.3s ease-in-out;
+        width: 100%; }
+        body .wrapper .cta-wrapper [class^="input"].show {
+          height: inherit;
+          margin-top: 10px;
+          border: 1px solid #909090;
+          padding: 5px; }
+
+/*# sourceMappingURL=style.css.map */
