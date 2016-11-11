@@ -6,7 +6,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
-  background: orange;
+  background: url(../images/carrots.jpg);
   background-size: cover;
   background-position: center; }
   body .wrapper {
