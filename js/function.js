@@ -1,5 +1,5 @@
 $(function () {
-	$('.register').on('click', function () {
+	$('.register-button').on('click', function () {
 		if($('.input-login').hasClass('show')) {
 			//Send it
 			$('.i-login').removeClass('show');
@@ -12,7 +12,7 @@ $(function () {
 			$('.i-login').removeClass('show');
 		}
 	});
-	$('.login').on('click', function () {
+	$('.login-button').on('click', function () {
 		if($('.input-register').hasClass('show')) {
 			//Send it
 			$('.input-register').removeClass('show');

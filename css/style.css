@@ -37,7 +37,7 @@ body {
         align-items: center;
         justify-content: space-around;
         width: 100%; }
-        body .wrapper .cta-wrapper .cta button {
+        body .wrapper .cta-wrapper .cta [class*="button"] {
           border: none;
           border-radius: 3px;
           font-family: "Open Sans";
@@ -48,17 +48,17 @@ body {
           display: flex;
           align-items: center;
           justify-content: center; }
-          body .wrapper .cta-wrapper .cta button i {
+          body .wrapper .cta-wrapper .cta [class*="button"] i {
             font-size: 0em;
             margin-left: 0px;
             transform: scale(0);
             transition: all 0.3s ease-in-out 0.2s; }
-            body .wrapper .cta-wrapper .cta button i.show {
+            body .wrapper .cta-wrapper .cta [class*="button"] i.show {
               transform: scale(1);
               margin-left: 5px;
               display: block;
               font-size: 0.8em; }
-        body .wrapper .cta-wrapper .cta .login {
+        body .wrapper .cta-wrapper .cta .login-button {
           border: 1px solid #909090;
           border-radius: 3px;
           padding: 7px 12px;
@@ -66,15 +66,15 @@ body {
           transition: all 0.3s ease-in-out;
           background: white;
           flex-grow: 1; }
-          body .wrapper .cta-wrapper .cta .login:hover {
+          body .wrapper .cta-wrapper .cta .login-button:hover {
             background: #efefef; }
-        body .wrapper .cta-wrapper .cta .register {
+        body .wrapper .cta-wrapper .cta .register-button {
           margin-left: 6px;
           background: #e71425;
           color: white;
           transition: all 0.3s ease-in-out;
           flex-grow: 2; }
-          body .wrapper .cta-wrapper .cta .register:hover {
+          body .wrapper .cta-wrapper .cta .register-button:hover {
             background: #de1323; }
       body .wrapper .cta-wrapper [class^="input"] {
         height: 0;
