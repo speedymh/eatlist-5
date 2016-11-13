@@ -1,7 +1,6 @@
-$(document).ready(function () {
+$(function () {
 	
 	// Login und Register öffnen unterschiedliche inputs
-	
 	$('.register-button').on('click', function () {
 		if($('.input-login').hasClass('show')) {
 			//Send it
@@ -41,9 +40,4 @@ $(document).ready(function () {
 			$('.i-login').addClass('show');
 		}
 	});
-	
-	$('body').on('click', function () {
-							 $(this).css('background' : 'red');
-							console.log('js works');	
-							 });
 });
