@@ -2,13 +2,19 @@ $(function () {
 	
 	// Login und Register öffnen unterschiedliche inputs
 	$('.register-button').on('click', function () {
+		console.log('it works');
+		$('.login-button').attr({
+				'type' : 'button'
+			});
+			$('.register-button').attr({
+				'type' : 'submit'
+			});
 		if($('.input-login').hasClass('show')) {
 			//Send it
 			$('.i-login').removeClass('show');
 			$('.i-register').addClass('show');
 			$('.input-login').removeClass('show');
 			$('.input-register').addClass('show');
-			console.log('it works');
 			$('.login-button').attr({
 				'type' : 'button'
 			});

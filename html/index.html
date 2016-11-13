@@ -14,16 +14,16 @@
 		<section class="wrapper">
   		<img src="../images/eatlist-logo.svg">
   		<p class="text">Hey Chef!<br> What do you want to do?</p>
-  		<form action="../php/test.php" method="post" class="cta-wrapper">
+  		<form action="../php/test.php" method="post" class="cta-wrapper" id="welcome-form">
 				<div class="cta">
-					<button class="login-button" type="reset">
+					<button class="login-button" type="button" id="welcome-form">
 						Login
 						<i class="fa fa-chevron-right i-login" aria-hidden="true"></i> 
 					</button>
-					<div class="register-button" type="button">
+					<button class="register-button" type="button" id="welcome-form">
 						Register 
 						<i class="fa fa-chevron-right i-register" aria-hidden="true"></i>
-					</div>
+					</button>
 				</div>
 				<input type="text" placeholder="username" class="input-login" name="login-name">
 				<input type="password" placeholder="password" class="input-login" name="login-password">
