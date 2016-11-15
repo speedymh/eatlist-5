@@ -6,7 +6,7 @@ $(function () {
 		$('.login-button').attr({
 				'type' : 'button'
 			});
-			$('.register-button').attr({
+			$('.register-button').delay(10000).attr({ //Problem: attr wird sofort hinzugefügt(noch während es gedrück ist --> sofortige Anforderung des php-scripts)
 				'type' : 'submit'
 			});
 		if($('.input-login').hasClass('show')) {
