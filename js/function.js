@@ -1,28 +1,49 @@
 $(function () {
-	$('.register').on('click', function () {
+	
+	// Login und Register öffnen unterschiedliche inputs
+	$('.register-button').on('click', function () {
+		$('.i-login').removeClass('show');
 		if($('.input-login').hasClass('show')) {
-			//Send it
-			$('.i-login').removeClass('show');
-			$('.i-register').addClass('show');
 			$('.input-login').removeClass('show');
 			$('.input-register').addClass('show');
 		} else {
 			$('.input-register').addClass('show');
-			$('.i-register').addClass('show');
-			$('.i-login').removeClass('show');
 		}
 	});
-	$('.login').on('click', function () {
+	
+	$('.login-button').on('click', function () {
+		$('.i-register').removeClass('show');
 		if($('.input-register').hasClass('show')) {
-			//Send it
 			$('.input-register').removeClass('show');
 			$('.input-login').addClass('show');
-			$('.i-login').addClass('show');
-			$('.i-register').removeClass('show');
 		} else {
 			$('.input-login').addClass('show');
-			$('.i-register').removeClass('show');
+		}
+	});
+	
+	$("input[type='text'][name='login-field']").keyup(function() {
+		console.log('new function');
+		
+		if(!$(this).val() == '') {
+			$('.register-button').attr({
+				'type' : 'button'
+			});
+			$('.login-button').attr({
+				'type' : 'submit'
+			});
 			$('.i-login').addClass('show');
+		}
+	});
+	
+	$("input[type='text'][name='register-field']").keyup(function() {
+		if(!$(this).val() == '') {
+			$('.login-button').attr({
+				'type' : 'button'
+			});
+			$('.register-button').attr({
+				'type' : 'submit'
+			});
+			$('.i-register').addClass('show');
 		}
 	});
 });

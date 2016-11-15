@@ -8,28 +8,29 @@
     <link rel="stylesheet"  type="text/css" href="../css/style.css">
 		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="../js/function.js"></script>
-
 	</head>
+	
 	<body>
 		<section class="wrapper">
   		<img src="../images/eatlist-logo.svg">
   		<p class="text">Hey Chef!<br> What do you want to do?</p>
-  		<div class="cta-wrapper">
+  		<form action="../php/test.php" method="post" class="cta-wrapper">
 				<div class="cta">
-					<button class="login">
-						Login 
+					<button class="login-button" type="button">
+						Login
 						<i class="fa fa-chevron-right i-login" aria-hidden="true"></i> 
 					</button>
-					<button class="register">
+					<button class="register-button" type="button">
 						Register 
 						<i class="fa fa-chevron-right i-register" aria-hidden="true"></i>
 					</button>
 				</div>
-				<input type="text" placeholder="username" class="input-login">
-				<input type="password" placeholder="password" class="input-login">
-				<input type="text" placeholder="username-register" class="input-register">
-				<input type="password" placeholder="password-register" class="input-register">
-			</div>
+				<input type="text" placeholder="username" class="input-login" name="login-field">
+				<input type="password" placeholder="password" class="input-login" name="login-field">
+				
+				<input type="text" placeholder="username-register" class="input-register" name="register-field">
+				<input type="password" placeholder="password-register" class="input-register" name="register-field">
+			</form>
 		</section>
 	</body>
 </html>
