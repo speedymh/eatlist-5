@@ -22,7 +22,6 @@ $(function () {
 	});
 	
 	$("input[type='text'][name='login-field']").keyup(function() {
-		console.log('new function');
 		
 		if(!$(this).val() == '') {
 			$('.register-button').attr({
