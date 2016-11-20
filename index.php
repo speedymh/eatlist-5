@@ -11,12 +11,33 @@
 	</head>
 	
 	<body>
+		<?php
+			$con = mysqli_connect("", "root", "Mi1wds3hL");
+		
+			mysqli_select_db($con, "eatlist");
+		
+			$res = mysqli_query($con, "SELECT * FROM benutzerdaten");
+		
+			$num = mysqli_num_rows($res);
+		
+			if($num > 0) echo "Ergebnis:<br>";
+			else echo "Keine Ergebnisse<br>";
+		
+			$dsatz = mysqli_fetch_assoc($res);
+			if ("$_POST['login-filed-name'] == $dsatz['benutzername']") {
+				echo "Hat geklappt";
+			}
+		
+		mysqli_close($con);
+		?>
+		
+		
 		<section class="wrapper">
   		<img src="images/eatlist-logo.svg">
   		<p class="text">Hey Chef!<br> What do you want to do?</p>
   		<form action="test1.php" method="post" class="cta-wrapper">
 				<div class="cta">
-					<button class="login-button" type="button" name="login">
+					<button class="login-button" type="button" name="login" formaction="index.php">
 						Login
 						<i class="fa fa-chevron-right i-login" aria-hidden="true"></i> 
 					</button>
