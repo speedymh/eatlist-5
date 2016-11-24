@@ -12,23 +12,36 @@
 	
 	<body>
 		<?php
-			$con = mysqli_connect("", "root", "Mi1wds3hL");
-		
-			mysqli_select_db($con, "eatlist");
-		
-			$res = mysqli_query($con, "SELECT * FROM benutzerdaten");
-		
-			$num = mysqli_num_rows($res);
-		
-			if($num > 0) echo "Ergebnis:<br>";
-			else echo "Keine Ergebnisse<br>";
-		
-			$dsatz = mysqli_fetch_assoc($res);
-			if ("$_POST['login-filed-name'] == $dsatz['benutzername']") {
-				echo "Hat geklappt";
+			session_start();
+			
+			if(isset($_POST['login'])) {
+				$db = mysqli_connect('', 'root', 'Mi1wds3hL', 'eatlist');
+				$username = strip_tags($_POST['login-field-name']);
+				$passwort = strip_tags($_POST['login-field-pw']);
+				
+				$username = stripslashes($username);
+				$passwort = stripslashes($passwort);
+				
+				$username = mysqli_real_escape_string($db, $username);
+				$passwort = mysqli_real_escape_string($db, $passwort);
+				
+				$passwort = md5($passwort);
+				
+				$sql = "SELECT * FROM benutzerdaten WHERE username='$username'";
+				$query = mysqli_query($db, $sql);
+				$row = mysqli_fetch_array($query);
+				$id = $row['id']; //!!!!!!!!!!!!
+				$db_passwort = $row['passwort'];
+				
+				if($passwort == $db_passwort) {
+					$_SESSION['login-field-name'] = $username;
+					$_SESSION['id'] = $id;
+					header("Location: test1.php");
+					echo "Alles Supi";
+				} else {
+					echo "Versuchs nochmal";
+				}
 			}
-		
-		mysqli_close($con);
 		?>
 		
 		
