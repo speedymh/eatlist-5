@@ -42,15 +42,45 @@
 					echo "Versuchs nochmal";
 				}
 			}
+		
+			if(isset($_SESSION['register'])) {
+				$db = mysqli_connect('', 'root', 'Mi1wds3hL', 'eatlist');
+				
+				$username = strip_tags($_POST['login-field-name']);
+				$passwort = strip_tags($_POST['login-field-pw']);
+				
+				$username = stripslashes($username);
+				$passwort = stripslashes($passwort);
+				
+				$username = mysqli_real_escape_string($db, $username);
+				$passwort = mysqli_real_escape_string($db, $passwort);
+				
+				$passwort = md5($passwort);
+				
+				$sql_store = "INSERT into benutzerdaten (benutzername, passwort) VALUES ('$username','$passwort')";
+				sql_fetch_username = "SELECT benutzername FROM benutzerdaten WHERE benutzername = '$username'";
+				
+				$query_username = mysqli_query($db, $sql_fetch_username);
+				
+				if(mysqli_num_rows($query_username)) {
+					echo "There is already a user with that name!";
+					return;
+				}
+				
+				if ($passwort == "") {
+					echo "Please insert a password";
+					return;
+				}
+			}
 		?>
 		
 		
 		<section class="wrapper">
   		<img src="images/eatlist-logo.svg">
   		<p class="text">Hey Chef!<br> What do you want to do?</p>
-  		<form action="test1.php" method="post" class="cta-wrapper">
+  		<form action="index.php" method="post" class="cta-wrapper">
 				<div class="cta">
-					<button class="login-button" type="button" name="login" formaction="index.php">
+					<button class="login-button" type="button" name="login">
 						Login
 						<i class="fa fa-chevron-right i-login" aria-hidden="true"></i> 
 					</button>
