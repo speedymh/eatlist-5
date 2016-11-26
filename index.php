@@ -44,6 +44,7 @@
 			}
 		
 			if(isset($_SESSION['register'])) {
+				echo "click";
 				$db = mysqli_connect('', 'root', 'Mi1wds3hL', 'eatlist');
 				
 				$username = strip_tags($_POST['login-field-name']);
@@ -58,8 +59,8 @@
 				$passwort = md5($passwort);
 				
 				$sql_store = "INSERT into benutzerdaten (benutzername, passwort) VALUES ('$username','$passwort')";
-				sql_fetch_username = "SELECT benutzername FROM benutzerdaten WHERE benutzername = '$username'";
-				
+				$sql_fetch_username = "SELECT benutzername FROM benutzerdaten WHERE benutzername = '$username'";
+		
 				$query_username = mysqli_query($db, $sql_fetch_username);
 				
 				if(mysqli_num_rows($query_username)) {
@@ -71,6 +72,11 @@
 					echo "Please insert a password";
 					return;
 				}
+				
+				mysqli_query($db, $sql_store);
+				
+				header("Location: benutzerdefinierteseite.php");
+				
 			}
 		?>
 		
