@@ -14,19 +14,12 @@
 			
 			if(isset($_POST['login'])) {
 				$db = mysqli_connect('', 'root', 'Mi1wds3hL', 'eatlist');
-				$username = strip_tags($_POST['login-field-name']);
-				$passwort = strip_tags($_POST['login-field-pw']);
-				
-				$username = stripslashes($username);
-				$passwort = stripslashes($passwort);
-				
-				$username = mysqli_real_escape_string($db, $username);
-				$passwort = mysqli_real_escape_string($db, $passwort);
+				$username = $_POST['login-field-name'];
+				$passwort = $_POST['login-field-pw'];
 				
 				$sql = "SELECT * FROM benutzerdaten WHERE username='$username'";
 				$query = mysqli_query($db, $sql);
 				$row = mysqli_fetch_array($query);
-				$id = $row['id']; //!!!!!!!!!!!!
 				$db_passwort = $row['passwort'];
 				
 				if($passwort == $db_passwort) {
@@ -37,7 +30,26 @@
 				} else {
 					echo "Versuchs nochmal";
 				}
-			}				
+			}
+			if (isset($_POST["register"])) 
+		{
+			$con = mysqli_connect("", "root", "Mi1wds3hL");
+			mysqli_select_db($con, "eatlist");
+			
+			$sql = "INSERT INTO benutzerdaten(benutzername, passwort) values('" . $_POST["register-field-name"] . "', '"
+			 . $_POST["register-field-pw"] . "')";
+			
+			mysqli_query($con, $sql);
+			
+			$num = mysqli_affected_rows($con);
+			if($num>0) {
+				echo "<p><font color = '#00aa00'>Ein Datensatz hinzugekommen</font></p>";
+			} else {
+				echo "<p><font color='#ff0000'>Es ist ein Fehler aufgetreten, es ist kein Datensatz hinzugekommen</font></p>";
+			}
+			
+			mysqli_close($con);
+		}
 		?>
 		
 	</head>
@@ -53,7 +65,7 @@
 						Login
 						<i class="fa fa-chevron-right i-login" aria-hidden="true"></i> 
 					</button>
-					<button class="register-button" type="button" name="register" formaction="register.php">
+					<button class="register-button" type="button" name="register">
 						Register 
 						<i class="fa fa-chevron-right i-register" aria-hidden="true"></i>
 					</button>
