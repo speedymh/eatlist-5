@@ -17,18 +17,16 @@
 				$username = $_POST['login-field-name'];
 				$passwort = $_POST['login-field-pw'];
 				
-				$sql = "SELECT * FROM benutzerdaten WHERE username='$username'";
+				$sql = "SELECT * FROM benutzerdaten WHERE benutzername='$username'";
 				$query = mysqli_query($db, $sql);
 				$row = mysqli_fetch_array($query);
 				$db_passwort = $row['passwort'];
 				
 				if($passwort == $db_passwort) {
 					$_SESSION['login-field-name'] = $username;
-					$_SESSION['id'] = $id;
 					header("Location: test1.php");
-					echo "Alles Supi";
 				} else {
-					echo "Versuchs nochmal";
+					echo "<script>alert('Bitte überprüfe Benutzernamen und Passwort')</script>";
 				}
 			}
 			if (isset($_POST["register"])) 
