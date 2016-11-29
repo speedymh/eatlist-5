@@ -2,7 +2,14 @@
 <html>
 <head>
 	<meta charset = "uft-8">
-	<?php 	
+	<?php 
+	
+		session_start();
+	
+		if(!isset($_SESSION['id'])) {
+		header("Location: index.php");
+		}
+	
 		if (isset($_POST["register"])) 
 		{
 			$con = mysqli_connect("", "root", "Mi1wds3hL");

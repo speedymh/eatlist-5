@@ -20,10 +20,12 @@
 				$sql = "SELECT * FROM benutzerdaten WHERE benutzername='$username'";
 				$query = mysqli_query($db, $sql);
 				$row = mysqli_fetch_array($query);
+				$id = $row['id'];
 				$db_passwort = $row['passwort'];
 				
 				if($passwort == $db_passwort) {
 					$_SESSION['login-field-name'] = $username;
+					$_SESSION['id'] = $id;
 					header("Location: test1.php");
 				} else {
 					echo "<script>alert('Bitte überprüfe Benutzernamen und Passwort')</script>";
